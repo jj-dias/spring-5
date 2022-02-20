@@ -7,6 +7,7 @@ import com.spring.spring5web.domain.Author;
 import com.spring.spring5web.domain.Book;
 import com.spring.spring5web.repo.AuthorRepositry;
 import com.spring.spring5web.repo.BookRepository;
+import com.spring.spring5web.repo.PublisherRepository;
 
 @Component
 public final class BootStrapData implements CommandLineRunner {
@@ -15,14 +16,13 @@ public final class BootStrapData implements CommandLineRunner {
 	
 	private final BookRepository bookRepository;
 	
-	
 	public BootStrapData(AuthorRepositry authorRepositry, BookRepository bookRepository) {
 		super();
 		this.authorRepositry = authorRepositry;
 		this.bookRepository = bookRepository;
 	}
-
-
+	
+	
 	@Override
 	public void run(String... args) throws Exception {
 		Author eric = new Author("Eric", "Ethan");
